@@ -1,0 +1,19 @@
+#%Module1.0
+### 2022-08-15: camillescott
+## 
+#https://github.com/ddarriba/jmodeltest2/
+
+setenv JMODELTEST_VERSION 2.1.10
+setenv JMODELTEST_HOME /share/apps/jmodeltest-$env(JMODELTEST_VERSION)
+
+prepend-path PATH $env(JMODELTEST_HOME)
+
+proc ModulesHelp {} {
+    puts stderr " jModelTest is a tool to carry out statistical selection of best-fit models of nucleotide substitution. "
+    puts stderr " https://github.com/ddarriba/jmodeltest2/"
+}
+
+module-whatis "jModelTest is a tool to carry out statistical selection of best-fit models of nucleotide substitution."
+if [module-info mode load] {
+    puts stderr "Module [module-info name] loaded."
+}
