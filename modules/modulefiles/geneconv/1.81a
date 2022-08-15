@@ -1,0 +1,21 @@
+#%Module1.0
+### 2022-08-15: camillescott
+## 
+# https://www.math.wustl.edu/~sawyer/geneconv/
+
+setenv GENECONV_VERSION 1.81a
+setenv GENECONV_HOME /share/apps/geneconv-$env(GENECONV_VERSION)
+
+prepend-path PATH $env(GENECONV_HOME)
+
+proc ModulesHelp {} {
+    puts stderr " Given an alignment of DNA or protein sequences, GENECONV finds the most likely candidates for aligned gene conversion events between pairs of sequences in the alignment. The program can also look for gene conversion events from outside of the alignment. Candidate events are ranked by multiple-comparison corrected P-values and listed to a spreadsheet-like output file."
+    puts stderr " https://www.math.wustl.edu/~sawyer/geneconv/"
+}
+
+module-whatis "Given an alignment of DNA or protein sequences, GENECONV finds the most likely candidates for aligned gene conversion events between pairs of sequences in the alignment. The program can also look for gene conversion events from outside of the alignment. Candidate events are ranked by multiple-comparison corrected P-values and listed to a spreadsheet-like output file."
+
+if [module-info mode load] {
+    puts stderr "Module [module-info name] loaded."
+    puts stderr "NOTE: geneconv must be run with -nolog to avoid segmentation faults."
+}
