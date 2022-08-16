@@ -1,0 +1,15 @@
+#%Module1.0
+## 2022-08-15: camillescott 
+## http://phylosolutions.com/paup-test/
+
+setenv PAUP_VERSION 4.0a168
+setenv PAUP_HOME /share/apps/paup-$env(PAUP_VERSION)
+
+set note "PAUP* (* Phylogenetic Analysis Using PAUP)"
+module-whatis "$note"
+
+prepend-path PATH $env(PAUP_HOME)
+
+if [module-info mode load] {
+    puts stderr "Module [module-info name] loaded "
+}
