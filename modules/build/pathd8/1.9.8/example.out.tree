@@ -1,0 +1,46 @@
+
+
+************************************************************************************************
+*  d 8   C A L C U L A T I O N                                                                 *
+************************************************************************************************
+
+Number of informative fixnodes:   1
+Number of informative minnodes:   2
+Number of informative maxnodes:   0
+
+d8 tree    : ((((Rat:22.388060,Human:22.388060)crown_placentals:102.611940,Platypus:125.000000)crown_mammals:135.000000,(Ostrich:150.000000,Alligator:150.000000)crown_Archosaurs:110.000000):166.742712,Frog:426.742712);
+
+Ancestor of          Ancestor of          Name                        Age  #Terminals              MPL         Rate *      minage      maxage
+Rat                  Frog                 -                       426.743           6           86.333       0.202308           -           - 
+Rat                  Alligator            -                       260.000           5           52.600       0.202308       260.0           - 
+Rat                  Platypus             crown_mammals           125.000           3           44.667       0.357333       125.0       125.0 
+Rat                  Human                crown_placentals         22.388           2            8.000       0.357333           -           - 
+Ostrich              Alligator            crown_Archosaurs        150.000           2           22.000       0.146667       150.0           - 
+
+
+  *) Rate = MPL / Age
+
+
+************************************************************************************************
+*  M P L  C A L C U L A T I O N                                                                *
+************************************************************************************************
+
+Clock test confidence: 0.950000
+Clock tests          : 5   (one for each node)
+Accepted             : 1
+Rejected             : 4
+
+MPL tree   : ((((Rat:8.000000,Human:8.000000)crown_placentals:36.666667,Platypus:44.666667)crown_mammals:7.933333,(Ostrich:22.000000,Alligator:22.000000)crown_Archosaurs:30.600000):33.733333,Frog:86.333333);
+
+Ancestor of          Ancestor of          Name                            MPL             #Terminals      Clock test: Acc/Rej
+Rat                  Frog                 -                        86.333 +/- 13.772               6      Acc
+Rat                  Alligator            -                        52.600 +/- 8.803                5      Rej, prob=0.000004
+Rat                  Platypus             crown_mammals            44.667 +/- 9.727                3      Rej, prob=0.012738
+Rat                  Human                crown_placentals          8.000 +/- 3.917                2      Rej, prob=0.012419
+Ostrich              Alligator            crown_Archosaurs         22.000 +/- 6.496                2      Rej, prob=0.000911
+
+
+************************************************************************************************
+*  E N D  C A L C U L A T I O N                                                                *
+************************************************************************************************
+

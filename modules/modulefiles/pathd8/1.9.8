@@ -1,0 +1,15 @@
+#%Module1.0
+## 2022-08-16: camillescott 
+## https://www2.math.su.se/PATHd8/
+
+setenv PATHD8_VERSION 1.9.8
+setenv PATHD8_HOME /share/apps/pathd8-$env(PATHD8_VERSION)
+
+set note "Input is given as a phylogenetic tree with branch lengths. An arbitrary number of age constraints can be specified, either as fixage, minage or maxage. The output contains the chronogram obtained from the PATHd8 analysis as well as a list of estimated node ages, their mean path lengths, and their estimated substitution rates. The output also contains results from the MPL analysis described in Britton et al. (2002), which can be of interest when there are no fossil datings or if the clock hypothesis is of interest (a clock test is performed at each node). "
+module-whatis "$note"
+
+prepend-path PATH $env(PATHD8_HOME)
+
+if [module-info mode load] {
+    puts stderr "Module [module-info name] loaded "
+}
