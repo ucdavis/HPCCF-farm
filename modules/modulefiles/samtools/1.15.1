@@ -1,0 +1,16 @@
+#%Module1.0
+## by PO 2022/28/4
+## fixed by CS 2022/16/08
+
+setenv samtools_VERSION 1.15.1
+setenv samtools_HOME /share/apps/samtools-$env(samtools_VERSION)
+
+prepend-path PATH $env(samtools_HOME)/bin
+prepend-path CPATH $env(samtools_HOME)/include
+prepend-path LD_LIBRARY_PATH $env(samtools_HOME)/libexec/htslib
+prepend-path LD_LIBRARY_PATH $env(samtools_HOME)/lib
+
+if [module-info mode load] {
+        puts stderr "Module [module-info name] loaded "
+}
+
