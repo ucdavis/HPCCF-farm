@@ -1,0 +1,45 @@
+#%Module1.0
+## 2022-08-16: camillescott 
+## https://github.com/mcsimenc/PhyLTR
+
+setenv PHYLTR_VERSION 0.1
+setenv PHYLTR_HOME /share/apps/phyltr-$env(PHYLTR_VERSION)
+
+# load biopython first: several of the modules following it
+# are for software with versions in the bio3 base environment,
+# but some of their standalones are more up-to-date.
+module load biopython/1.79
+module load bedtools/2.27.1
+module load mafft/7.294
+module load fasttree/2.1.10
+module load trimal/1.4.1
+module load jmodeltest/2.1.10
+module load genometools/1.5.9
+module load hmmer/3.3.2
+module load mcl/12-068
+module load geneconv/1.81a
+module load paup/4.0a168
+module load PHYLIP/3.698
+module load spack/R/4.1.1
+module load perl/5.26.1
+module load circos/0.69
+module load pathd8/1.9.8
+module load emboss/6.6.0
+module load samtools/1.15.1
+module load ncbi-blast/2.12.0+
+
+set note "Phylogenetic Analysis of Long Terminal Repeat Retrotransposons. See also: https://doi.org/10.5281/zenodo.4256534"
+module-whatis "$note"
+
+prepend-path PATH $env(PHYLTR_HOME)/scripts/
+prepend-path PATH $env(PHYLTR_HOME)
+
+if [module-info mode load] {
+    puts stderr "Module [module-info name] loaded."
+    puts stderr "NOTE: please run phyltr with --no_repbase."
+    puts stderr "NOTE: This module relies on the Biopython environment."
+    puts stderr "      please run:"
+    puts stderr "          source activate biopython-1.79"
+    puts stderr "      and when done, run:"
+    puts stderr "          conda deactivate"
+}
