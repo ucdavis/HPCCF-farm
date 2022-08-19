@@ -1,0 +1,15 @@
+#%Module1.0
+## by Camille Scott 2022-08-19
+## http://shapelib.maptools.org/
+
+setenv SHAPELIB_VERSION 1.5.0
+setenv SHAPELIB_HOME /share/apps/shapelib-$env(SHAPELIB_VERSION)
+
+prepend-path PATH $env(SHAPELIB_HOME)/bin
+prepend-path CPATH $env(SHAPELIB_HOME)/include
+prepend-path LD_LIBRARY_PATH $env(SHAPELIB_HOME)/lib
+
+if [module-info mode load] {
+    puts stderr "Module [module-info name] loaded "
+}
+
