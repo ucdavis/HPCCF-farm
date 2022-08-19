@@ -1,0 +1,16 @@
+#%Module1.0
+## by Camille Scott 2022-08-19
+## http://plplot.sourceforge.net/
+
+setenv PLPLOT_VERSION 5.15.0
+setenv PLPLOT_HOME /share/apps/plplot-$env(PLPLOT_VERSION)
+
+prepend-path PATH $env(PLPLOT_HOME)/bin
+prepend-path CPATH $env(PLPLOT_HOME)/include
+prepend-path LD_LIBRARY_PATH $env(PLPLOT_HOME)/lib
+prepend-path MANPATH $env(PLPLOT_HOME)/share/man
+
+if [module-info mode load] {
+    puts stderr "Module [module-info name] loaded "
+}
+
