@@ -3,6 +3,9 @@
 ## 
 #https://github.com/ddarriba/jmodeltest2/
 
+module load java/1.8
+module load phyml
+
 setenv JMODELTEST_VERSION 2.1.10
 setenv JMODELTEST_HOME /share/apps/jmodeltest-$env(JMODELTEST_VERSION)
 
